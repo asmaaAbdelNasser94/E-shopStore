@@ -1,0 +1,42 @@
+<mat-toolbar>
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center">
+      <div *ngIf="!isLogin" class="d-flex justify-content-center person-box">
+        <mat-icon  class="material-icons-outlined person" matRipple [matRippleCentered]="centered"
+          [matMenuTriggerFor]="menu">person</mat-icon>
+        <mat-menu #menu="matMenu" class="mt-2 menu">
+          <a routerLink="sign-up">
+            <button mat-menu-item>
+              <span>Sign up</span>
+              <mat-icon class="fs-3">app_registration</mat-icon>
+            </button>
+          </a>
+          <a routerLink="sign-in">
+            <button mat-menu-item>
+              Sign in
+              <mat-icon class="fs-3">login</mat-icon>
+            </button>
+          </a>
+        </mat-menu>
+      </div>
+      <div class="header-text text-center d-flex flex-column justify-content-center">
+        <h1 class="mb-1 fw-bold">E-Shop</h1>
+        <p class="fw-light text-muted">Online Shop Store</p>
+      </div>
+      <div class="header-right-icon d-flex align-items-center">
+        <span *ngIf="isLogin" class="me-2">Hello {{userName}}</span>
+        <mat-icon *ngIf="isLogin" class="material-icons-outlined person2 me-3" matRipple [matRippleCentered]="centered"
+          [matMenuTriggerFor]="menuLog">person</mat-icon>
+        <mat-menu #menuLog="matMenu" class="mt-2 menu">
+          <button (click)="logOut()" mat-menu-item>
+            Logout
+            <mat-icon class="fs-3">logout</mat-icon>
+          </button>
+        </mat-menu>
+        <a routerLink="cart">
+          <mat-icon class="material-icons-outlined rounded-circle">shopping_cart</mat-icon>
+        </a>
+      </div>
+    </div>
+  </div>
+</mat-toolbar>

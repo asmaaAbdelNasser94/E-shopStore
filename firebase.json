@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "E-shop",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

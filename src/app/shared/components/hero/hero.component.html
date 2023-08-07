@@ -1,0 +1,29 @@
+<div class="hero">
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+  <path fill="#E74646" fill-opacity="1"
+    d="M0,96L80,128C160,160,320,224,480,256C640,288,800,288,960,261.3C1120,235,1280,181,1360,154.7L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z">
+  </path>
+</svg>
+  <owl-carousel-o [options]="customOptions">
+    <ng-container *ngFor="let slide of slidesStore">
+      <ng-template carouselSlide [width]="100">
+        <img [src]="slide" class="vh-100 img-fluid">
+      </ng-template>
+    </ng-container>
+  </owl-carousel-o>
+  <div class="hero-text d-flex align-items-center">
+    <div class="container">
+      <div class="d-flex justify-contect-between align-items-center">
+        <div>
+          <p class="fs-5 fw-light">START YOUR ONLINE SHOPPING!</p>
+          <h2 class="mt-2">
+            Stay home & we will deliver all your need's
+          </h2>
+          <app-shop-btn></app-shop-btn>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

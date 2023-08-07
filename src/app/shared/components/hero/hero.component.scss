@@ -1,0 +1,54 @@
+
+.hero {
+  width: 100%;
+  height: calc(100vh - 160px);
+  position: relative;
+  overflow: hidden;
+
+  img {
+    background-position: top center;
+    background-size: cover;
+  }
+
+  &::before {
+    content: "";
+    background: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 44;
+  }
+
+  svg {
+    position: absolute;
+    bottom: 0;
+    z-index: 333;
+  }
+
+  .hero-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 20%;
+    z-index: 555;
+
+    h2 {
+      max-width: 600px;
+      font-size: 55px;
+      font-weight: bold;
+    }
+
+    h2,
+    p {
+      color: white !important;
+    }
+
+    button {
+      // @extend %main-button;
+    }
+
+  }
+}

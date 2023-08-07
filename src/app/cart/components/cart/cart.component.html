@@ -1,0 +1,99 @@
+<section class="cart-table">
+  <div class="container">
+    <h2>Cart</h2>
+    <div *ngIf="isShow;then cart else empty">
+
+    </div>
+    <ng-template #empty>
+      <div class="d-flex align-items-center my-3">
+        <h2>Your cart is empty !</h2>
+        <mat-icon class="fs-2 ms-2">
+          sentiment_dissatisfied
+        </mat-icon>
+      </div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, optio in? Consequatur tempore dignissimos necessitatibus quas minima amet aut mollitia harum, id minus voluptates fuga obcaecati deleniti ex similique ullam.</p>
+    </ng-template>
+
+<ng-template #cart>
+<div class="row g-5">
+  <div class="col-lg-8">
+    <div *ngIf="final.length > 0" class="item-warn d-flex align-items-center border border-secondary rounded-2 mt-4 mb-2">
+      <h5>You have {{items}} item in your cart
+      </h5>
+      <mat-icon class="fs-3 ms-2">sentiment_very_satisfied</mat-icon>
+
+    </div>
+    <mat-table [dataSource]="final" >
+      <ng-container matColumnDef="Product">
+        <mat-header-cell *matHeaderCellDef class="ps-5"> Product </mat-header-cell>
+        <mat-cell *matCellDef="let element" class="justify-content-start">
+          <img [src]="element.image" class="img-fluid" style="width: 50px;" alt="">
+          <span class="ms-5">
+            {{element.title}}
+          </span>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="Price">
+        <mat-header-cell *matHeaderCellDef> Price </mat-header-cell>
+        <mat-cell *matCellDef="let element"> ${{element.price}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="Quantity">
+        <mat-header-cell *matHeaderCellDef> Quantity </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <div class="d-flex justify-content-between align-items-center">
+            <button class="decrement" (click)="decProQunty(element.id)" matRipple>
+              <mat-icon>remove</mat-icon>
+            </button>
+            <input type="number" (change)="quantity = element.quantity ; quntyChange(element.id)"
+              [(ngModel)]="element.quantity" class="form-control mx-3 q-control">
+            <button class="increment" (click)="incProQunty(element.id)" matRipple>
+              <mat-icon>add</mat-icon>
+            </button>
+          </div>
+
+        </mat-cell>
+      </ng-container>
+
+
+      <ng-container matColumnDef="Total">
+        <mat-header-cell *matHeaderCellDef> Total </mat-header-cell>
+        <mat-cell *matCellDef="let element"> ${{element.price * element.quantity}} </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+    <div class="text-center">
+      <button (click)="deleteCart()" class="btn rounded-5 my-5 w-25" matRipple>Delete Cart</button>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <div class="checkout border p-3 border-1 rounded-2">
+      <div class="d-flex">
+        <p class="text-muted">Subtotal</p>
+        <p class="ms-auto">{{total | currency}}</p>
+      </div>
+      <div class="d-flex mt-3">
+        <p class="text-muted">Discount</p>
+        <p class="ms-auto"> {{discount | currency}} -</p>
+      </div>
+      <hr>
+      <div class="d-flex">
+        <p>Grand total</p>
+        <p class="ms-auto"> {{grandTotal | currency}}</p>
+      </div>
+      <button (click)="calcTotal()" class="btn checkout-btn rounded-5 mt-5 w-100" matRipple>Checkout now</button>
+    </div>
+  </div>
+</div>
+   </ng-template>
+
+
+  </div>
+
+</section>
+<ngx-http-loader [opacity]="0.9" [title]="'E-Shop.com'"
+subTitle="Online Shop Store"
+  [loader]="loader.ELLIPSIS" [iconColor]="'#E74646'" [backdropBackgroundColor]="'black'"> </ngx-http-loader>

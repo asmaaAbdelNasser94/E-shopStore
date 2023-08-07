@@ -1,0 +1,58 @@
+@import "../../../assets/style/colors";
+
+.sec-hero {
+  position: relative;
+  background-image: url(../../../assets/imgs/hero3.jpeg);
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 200px;
+  color: white !important;
+  letter-spacing: 1px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+}
+.contact-us{
+    min-height: calc(100vh - (80px + 80px));
+}
+.card{
+  border: 0;
+}
+.submit {
+  background-color: $mainColor ;
+  color: white;
+  border: none;
+  letter-spacing: 1px;
+  padding: 6px 15px;
+  border: 2px solid $mainColor;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+
+  &:hover {
+    color: white !important;
+    background-color: $mainColor;
+    border-color: $mainColor;
+  }
+}
+::ng-deep .mdc-text-field--filled .mdc-line-ripple::after {
+  border-bottom-color: $darkColor;
+}
+
+::ng-deep .mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {
+  color: $darkColor;
+}
+
+::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: white;
+}

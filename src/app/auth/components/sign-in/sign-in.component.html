@@ -1,0 +1,45 @@
+<section class="sign-in p-0">
+  <div class="form-container col-lg-5 h-100 col-md-7 ms-auto">
+    <div class="form h-100">
+      <div class="card rounded-0 h-100 p-5">
+        <h2 class="mx-auto mb-4">Welcome Back!</h2>
+        <form class="px-lg-5" [formGroup]="signInForm" (ngSubmit)="signIn(signInForm)">
+          <div *ngIf="errorMsg" class="alert alert-danger" role="alert">
+            {{errorMsg}}
+          </div>
+          <div class="mb-3">
+            <mat-form-field class="w-100">
+              <mat-label>Enter your email</mat-label>
+              <input matInput placeholder="pat@example.com" formControlName="email" required>
+              <mat-icon matSuffix class="fs-4">person</mat-icon>
+
+              <mat-error *ngIf="signInForm.controls['email']">{{getEmailErrorMessage()}}</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="mb-3">
+            <mat-form-field class="w-100">
+              <mat-label>Enter your password</mat-label>
+              <input matInput formControlName='password' [type]="hide ? 'password' : 'text'" required>
+
+              <button mat-icon-button type="button" matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon class="fs-4">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+              <mat-error *ngIf="signInForm.controls['password'].invalid">{{getPasswordErrorMessage()}}</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="text-center">
+            <button type="submit" class="btn submit rounded-5 mt-3 w-100" matRipple>Sign in</button>
+          </div>
+        </form>
+        <div class="sign-up text-center mt-5">
+          Don't have an account?
+          <a routerLink="/sign-up">Sign up</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>

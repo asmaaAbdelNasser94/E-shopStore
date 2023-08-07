@@ -1,0 +1,10 @@
+  <button *ngIf="!(myIndex == i && isClicked)" (click)="myIndex = i; isClicked = true"
+    class="mt-3 add-to-cart rounded-5" matRipple>
+    Add to cart
+  </button>
+<div *ngIf="myIndex == i && isClicked" class="d-flex justify-content-between mt-3">
+  <input type="number" [(ngModel)]="quantity" class="form-control text-center me-3">
+  <button (click)="checkLogin(productId); isClicked = false" class="add-to-cart text-center rounded-5" matRipple>
+    Add
+  </button>
+</div>

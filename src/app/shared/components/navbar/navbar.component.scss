@@ -1,0 +1,76 @@
+@import '../../../../assets/style/colors';
+
+* {
+  color: white !important;
+}
+
+.dark-active {
+  background-color: #0000000b !important;
+  padding: 8px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+
+  mat-icon {
+    color: $bgDark !important;
+  }
+}
+
+// .link-active{
+//   &::before{
+//     position: absolute;
+//     content: '';
+//     background-color: white;
+//     width: 70%;
+//     height: 3px;
+//     bottom: 0;
+//     left: 50%;
+//     transform: translateX(-50%);
+//     -webkit-transform: translateX(-50%);
+//     -moz-transform: translateX(-50%);
+//     -ms-transform: translateX(-50%);
+//     -o-transform: translateX(-50%);
+// }
+// }
+mat-toolbar {
+  background-color: $mainColor !important;
+  height: 80px;
+
+
+
+  mat-icon {
+    cursor: pointer;
+    font-size: 35px !important;
+  }
+}
+
+mat-list-item {
+  overflow: visible;
+  text-transform: capitalize;
+
+  a {
+    font-size: 20px;
+    font-weight: lighter;
+    letter-spacing: 1px;
+  }
+}
+
+.offcanvas {
+  background-color: $mainColor;
+  width: 280px;
+
+  mat-list {
+    flex-direction: column !important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  mat-toolbar {
+    mat-list {
+      display: none !important;
+    }
+  }
+
+}

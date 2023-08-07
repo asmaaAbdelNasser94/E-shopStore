@@ -1,0 +1,36 @@
+<div>
+  <mat-toolbar>
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between">
+        <button mat-icon-button class="example-icon d-flex align-items-center justify-content-center"
+          aria-label="Example icon-button with menu icon" data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions" s>
+          <mat-icon>menu</mat-icon>
+        </button>
+        <mat-list class="d-flex" role="list">
+          <mat-list-item routerLinkActive="link-active" role="listitem"><a routerLink="home">Home</a></mat-list-item>
+          <mat-list-item role="listitem"><a routerLink="products">Products</a></mat-list-item>
+          <mat-list-item role="listitem"><a routerLink="contact">Contact us</a></mat-list-item>
+        </mat-list>
+        <div class="d-flex justify-content-center align-items-center">
+          <button [ngClass]="{'dark-active' : isClicked}" (click)="toggleTheme()" class="bg-transparent border-0">
+            <mat-icon class="material-icons-outlined">dark_mode</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </mat-toolbar>
+</div>
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+  aria-labelledby="offcanvasWithBothOptionsLabel">
+  <div class="offcanvas-header">
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <mat-list class="d-flex" role="list">
+      <mat-list-item role="listitem"><a routerLink="home">Home</a></mat-list-item>
+      <mat-list-item role="listitem"><a routerLink="products">Products</a></mat-list-item>
+      <mat-list-item role="listitem"><a routerLink="contact">Contact us</a></mat-list-item>
+    </mat-list>
+  </div>
+</div>

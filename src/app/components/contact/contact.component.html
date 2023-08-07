@@ -1,0 +1,73 @@
+<div class="contact-us">
+  <div class="sec-hero">
+    <div class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center">
+      <h2>Contact</h2>
+    </div>
+  </div>
+  <section class="content">
+    <div class="container">
+      <div class="row gy-5">
+        <div class="col-lg-6 d-flex flex-column justify-content-end">
+            <img class="img-fluid" src="../../../assets/imgs/contact.jpeg" alt="">
+            <p class="mt-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet repudiandae perspiciatis nisi
+              vel? Minima praesentium hic unde aspernatur similique accusamus omnis, fuga a amet at assumenda illo
+              eaque.
+              Quibusdam, officiis.</p>
+        </div>
+        <div class="col-lg-6">
+          <div class="form-container">
+            <div class="form">
+              <div class="card bg-transparent rounded-0 px-5">
+                <h2 class="mx-auto mb-4">Send Message</h2>
+                <form >
+                  <div class="mb-3">
+                    <mat-form-field class="w-100">
+                      <mat-label>Enter your Name</mat-label>
+                      <input matInput placeholder="Jhon Smith"  required>
+                      <mat-icon matSuffix class="fs-4">person</mat-icon>
+
+                    </mat-form-field>
+                  </div>
+                  <div class="mb-3">
+                    <mat-form-field class="w-100">
+                      <mat-label>Enter your email</mat-label>
+                      <input matInput placeholder="pat@example.com"  required>
+                      <mat-icon matSuffix class="fs-4">email</mat-icon>
+                    </mat-form-field>
+
+                  </div>
+                  <div class="mb-3">
+                    <mat-form-field class="w-100">
+                      <mat-label>Phone number</mat-label>
+                      <input matInput placeholder="0100000000"  required>
+                      <mat-icon matSuffix class="fs-4">phone</mat-icon>
+                    </mat-form-field>
+
+                  </div>
+
+                  <div class="mb-3">
+                    <mat-form-field class="w-100">
+                      <mat-label>Textarea</mat-label>
+                      <textarea matInput></textarea>
+                      <mat-icon matSuffix class="fs-4">message</mat-icon>
+
+                    </mat-form-field>
+
+                  </div>
+
+                  <div class="text-center">
+                    <button type="submit" class="btn submit rounded-5 mt-3 w-100" matRipple>Send</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+<ngx-http-loader [opacity]="0.9" [title]="'E-Shop.com'" subTitle="Online Shop Store" [loader]="loader.ELLIPSIS"
+  [iconColor]="'#E74646'" [backdropBackgroundColor]="'black'"> </ngx-http-loader>

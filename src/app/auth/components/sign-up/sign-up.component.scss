@@ -1,0 +1,81 @@
+@import "../../../../assets/style/colors";
+.sign-up{
+  height: calc(100vh - (80px + 80px));
+  background-image: url(../../../../assets/imgs/sign-in.jpeg);
+  background-position: top center;
+  background-size: cover;
+  position: relative;
+  display: flex;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+
+  }
+  .sign-in a{
+    color: $mainColor;
+  }
+}
+
+
+.card {
+  background-color: rgba(255, 255, 255);
+  border: 0;
+  height: 600px;
+}
+
+.submit {
+  background-color: $mainColor ;
+  color: white;
+  border: none;
+  letter-spacing: 1px;
+  padding: 6px 15px;
+  border: 2px solid $mainColor;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+
+  &:hover {
+    color: white !important;
+    background-color: $mainColor;
+    border-color: $mainColor;
+  }
+}
+
+::ng-deep .mdc-text-field--filled .mdc-line-ripple::after {
+  border-bottom-color: $darkColor;
+}
+
+::ng-deep .mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {
+  color: $darkColor;
+}
+
+::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: white;
+}
+
+@media only screen and (max-width: 768px) {
+  .sign-up {
+    align-items: center !important;
+    .form-container {
+      margin: auto;
+      height: 600px !important;
+    }
+    .card {
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 5px !important;
+      -webkit-border-radius: 5px !important;
+      -moz-border-radius: 5px !important;
+      -ms-border-radius: 5px !important;
+      -o-border-radius: 5px !important;
+    }
+  }
+
+}

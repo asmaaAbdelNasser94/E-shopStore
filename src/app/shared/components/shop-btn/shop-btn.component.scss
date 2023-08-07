@@ -1,0 +1,23 @@
+@import "../../../../assets/style/colors";
+
+button {
+  a {
+    color: white !important;
+    letter-spacing: 1px;
+  }
+
+  font-size: 20px;
+  background-color: $mainColor;
+  padding: 8px 25px;
+  border: 2px solid $mainColor;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+
+  &:hover {
+    background-color: $mainColor;
+    border-color: $mainColor;
+  }
+}

@@ -1,0 +1,54 @@
+<section class="sign-up p-0">
+  <div class="form-container col-lg-5 h-100 col-md-7 ms-auto">
+    <div class="form h-100">
+      <div class="card rounded-0 h-100 p-5">
+        <h2 class="mx-auto mb-4">Create an account</h2>
+        <form class="px-lg-5" [formGroup]="signUpForm" (ngSubmit)="signUp(signUpForm)">
+          <div *ngIf="errorMsg" class="alert alert-danger" role="alert">
+            {{errorMsg}}
+          </div>
+          <div class="mb-3">
+            <mat-form-field class="w-100">
+              <mat-label>Enter your Name</mat-label>
+              <input matInput placeholder="Jhon Smith" formControlName="userName" required>
+              <mat-icon matSuffix class="fs-4">person</mat-icon>
+              <mat-error *ngIf="signUpForm.controls['userName']">{{getEmailErrorMessage()}}</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="mb-3">
+            <mat-form-field class="w-100">
+              <mat-label>Enter your email</mat-label>
+              <input matInput placeholder="pat@example.com" formControlName="email" required>
+              <mat-icon matSuffix class="fs-4">email</mat-icon>
+
+              <mat-error *ngIf="signUpForm.controls['email']">{{getEmailErrorMessage()}}</mat-error>
+            </mat-form-field>
+
+          </div>
+
+          <div class="mb-3">
+            <mat-form-field class="w-100">
+              <mat-label>Enter your password</mat-label>
+              <input matInput formControlName='password' [type]="hide ? 'password' : 'text'" required>
+
+              <button mat-icon-button type="button" matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon class="fs-4">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+              <mat-error *ngIf="signUpForm.controls['password'].invalid">{{getPasswordErrorMessage()}}</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="text-center">
+            <button type="submit" class="btn submit rounded-5 mt-3 w-100" matRipple>Sign Up</button>
+          </div>
+        </form>
+        <div class="sign-in text-center mt-5">
+          Already have an account?
+          <a routerLink="/sign-in">Sign in</a>
+           </div>
+        </div>
+      </div>
+    </div>
+
+</section>

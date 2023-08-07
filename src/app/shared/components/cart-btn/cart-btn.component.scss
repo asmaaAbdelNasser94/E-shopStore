@@ -1,0 +1,22 @@
+@import "../../../../assets/style/colors";
+ button {
+   color: white;
+   font-size: 16px;
+   background-color: $mainColor;
+   padding: 6px 15px;
+   border: 2px solid $mainColor;
+   transition: all 0.5s;
+   -webkit-transition: all 0.5s;
+   -moz-transition: all 0.5s;
+   -ms-transition: all 0.5s;
+   -o-transition: all 0.5s;
+
+   &:hover {
+     color: white !important;
+     background-color: $mainColor;
+     border-color: $mainColor;
+   }
+ }
+input {
+  width: 50px !important;
+}

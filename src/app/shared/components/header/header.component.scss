@@ -1,0 +1,52 @@
+@import '../../../../assets/style/colors';
+
+mat-toolbar{
+  height: 80px !important;
+  background-color: $lightColor;
+  h1{
+    font-family: 'Caveat', cursive !important;
+    font-size: 35px;
+    letter-spacing: 1px;
+  }
+  mat-icon{
+    cursor: pointer;
+    font-size: 35px !important;
+  }
+  .person-box {
+    border-bottom: 5px solid $mainColor;
+  }
+  .person2{
+    border-bottom: 5px solid $mainColor;
+  }
+  .header-right-icon{
+    mat-icon:nth-child(1){
+      color: $mainColor;
+      background-color: #e7464613;
+      padding: 10px;
+    }
+  }
+}
+::ng-deep .menu {
+  min-width: 250px !important;
+  background-color: $lightColor;
+}
+@media only screen and (max-width: 600px) {
+  h1{
+    font-size: 30px !important;
+    img{
+      width: 20px !important;
+    }
+  }
+  p{
+    font-size: 15px !important;
+  }
+  .person-box{
+    display: none !important;
+  }
+  .person2{
+    display: inline-block !important;
+  }
+  .header-text{
+    text-align: left !important;
+  }
+}

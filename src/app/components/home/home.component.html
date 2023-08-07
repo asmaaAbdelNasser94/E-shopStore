@@ -1,0 +1,206 @@
+<!-- Start of Hero Component -->
+<app-hero></app-hero>
+<!-- End of Hero Component -->
+
+<!-- Start of FreeShipping Section -->
+
+<section class="free-shipping">
+  <div class="container">
+    <div class="d-flex justify-content-center align-items-center">
+      <p class="fs-2 me-3">Free Shipping For You Till Midnight</p>
+      <mat-icon>segment</mat-icon>
+      <mat-icon>local_shipping</mat-icon>
+    </div>
+  </div>
+</section>
+
+<!-- End of FreeShipping Section -->
+
+<!-- Start of Products Section -->
+
+<section class="products">
+  <div class="container">
+    <div class="sec-header text-center">
+      <h3 class="text-uppercase mb-1 fw-bold">Top <span>Categories</span></h3>
+      <p class="text-muted">Handpicked Favourites just for you</p>
+      <div class="header-line"></div>
+    </div>
+    <div class="row g-5 mt-5 align-items-center">
+      <div class="col-lg-5">
+        <div class="video-box align-self-start">
+          <img class="w-100 shadow rounded-2 " src="../../../assets/imgs/online-shopping.jpeg" alt="">
+          <div class="btn-play rounded-2">
+            <button class="" mat-fab (click)="openVideoDialog()" aria-label="Example icon button with a home icon">
+              <mat-icon>play_arrow</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <mat-tab-group dynamicHeight color="accent"
+          (selectedTabChange)="defaultProduct.next($event.tab.textLabel.toLocaleLowerCase())"
+          animationDuration="1500ms">
+          <mat-tab *ngFor="let category of Categories" label="{{category.toLocaleUpperCase()}}">
+            <div class="row mt-2 gy-3">
+              <div *ngFor="let product of productsByCategory; let i = index" class="col-md-4 col-sm-4 d-flex">
+
+                <div class="product-box w-100 p-2 d-flex flex-column justify-content-between align-items-center ">
+                  <div class="text-center">
+                    <img class="img-fluid rounded-2" [src]="product.image" alt="">
+                    <h6 class="mt-3 ">{{product.title}}</h6>
+                  </div>
+                  <div>
+                    <p class="fw-bold"><span class="text-muted me-2 discount">{{product.price + 23 | currency : 'USD'
+                        :'symbol': '1.1-1'}}</span>{{product.price | currency : 'USD' :'symbol': '1.1-1'}}</p>
+                <app-cart-btn [i]="i" [cartProducts]="cartProducts" [productId]="product.id"></app-cart-btn>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </mat-tab>
+        </mat-tab-group>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- End of Products Section -->
+
+<!-- Start of menFlat Component -->
+<app-men-flat></app-men-flat>
+<!-- End of menFlat Component -->
+
+<!-- Start of womenFalt Component -->
+<app-women-flat></app-women-flat>
+<!-- End of womenFalt Component -->
+
+<!-- Start of Categories Section -->
+<section class="categories">
+  <div class="container">
+    <div class="sec-header text-center">
+      <h3 class="text-uppercase mb-1 fw-bold">Featured <span>Categories</span></h3>
+      <p class="text-muted">Handpicked Favourites just for you</p>
+      <div class="header-line"></div>
+    </div>
+    <div class="col-lg-8 mx-auto">
+      <div class="row mt-5 px-lg-0 border">
+        <div class="col-6 border-end border-bottom">
+          <div class="category-box text-center  text-muted p-4">
+            <mat-icon class="mb-2">desktop_windows</mat-icon>
+            <p>ELECTRONICS</p>
+          </div>
+        </div>
+        <div class="col-6 border-bottom">
+          <div class="category-box text-center text-muted p-4">
+            <mat-icon class="mb-2">man</mat-icon>
+            <p>MEN'S CLOTHING</p>
+          </div>
+        </div>
+        <div class="col-6 border-end">
+          <div class="category-box text-center  text-muted p-4">
+            <mat-icon class="mb-2">woman</mat-icon>
+            <p>WOMEN'S CLOTHING</p>
+          </div>
+        </div>
+        <div class=" col-6">
+          <div class="category-box text-center  text-muted p-4">
+            <mat-icon class="mb-2">diamond</mat-icon>
+            <p>JEWELERY</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- Start of Categories Section -->
+
+<!-- Start of cashBack Section -->
+
+<section class="cash-back">
+  <div class=" cash-back-content mb-5 pt-5 d-flex align-items-center justify-content-center">
+    <div class="container">
+      <div class="d-flex justify-content-center align-items-center">
+        <img style="width: 120px;" src="../../../assets/imgs/money.png" alt="" class="img-fluid cash-img1">
+        <div class="ms-5">
+          <p>Free Delivery</p>
+          <p class="h1 fw-bold"><span class="discount-cash">20%</span> Cashback</p>
+          <p class="text-muted fw-light">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <app-shop-btn></app-shop-btn>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- End of cashBack Section -->
+
+
+<!-- Start of shopWithUs Section -->
+
+<section class="shop-with-us">
+  <div class="container">
+    <div class="sec-header text-center">
+      <h3 class="text-uppercase mb-1 fw-bold">Shop With <span>Us</span></h3>
+      <p class="text-muted">Handpicked Favourites just for you</p>
+      <div class="header-line"></div>
+    </div>
+    <div class="row mt-5 gy-5">
+      <div *ngFor="let product of limitProducts; let i = index" class="col-lg-3 col-md-4 col-sm-6 d-flex">
+        <div class=" w-100 p-2 d-flex flex-column justify-content-between align-items-center">
+          <div class="product-container text-center">
+            <img class="img-fluid rounded-2" [src]="product.image" alt="">
+            <div class="product-overlay p-3 rounded flex-column justify-content-end">
+              <div class="product-icons">
+                <div class="text-end">
+                  <p class="show-icon d-inline-block bg-light text-dark p-2 rounded-circle">
+                    <mat-icon class="fs-4" (click)="productId = product.id"
+                      (click)="openProductDialog()">visibility</mat-icon>
+                  </p>
+                </div>
+                <div class="mt-2 text-end">
+                  <p class="add-cart-icon d-inline-block bg-light text-dark p-2 rounded-circle">
+                    <mat-icon class="fs-4 ">favorite</mat-icon>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h5 class="mt-3 fs-5 text-center">{{product.title}}</h5>
+          <div class="mt-2 text-center">
+            <p><span class="text-muted me-2 discount">{{product.price + 23 | currency : 'USD' :'symbol':
+                '1.1-1'}}</span>{{product.price | currency : 'USD' :'symbol': '1.1-1'}}</p>
+            <!-- <app-cart-btn [productId]="product.id"></app-cart-btn> -->
+          <div>
+            <button *ngIf="!(myIndex == i && isClicked)" (click)="myIndex = i; isClicked = true"
+              class="mt-3 add-to-cart rounded-5" matRipple>
+              Add to cart
+            </button>
+          </div>
+          <div *ngIf="myIndex == i && isClicked" class="d-flex justify-content-between mt-3">
+            <input type="number" [(ngModel)]="quantity" class="form-control quantityInput text-center me-3">
+            <button (click)="checkLogin(product.id); isClicked = false" class="add-to-cart text-center rounded-5" matRipple>
+              Add
+            </button>
+          </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="see-all mt-5 d-flex align-items-center justify-content-center">
+      <button class="bg-transparent border-0 ">
+        <a class="fs-5" routerLink="/products">See All Products</a>
+      </button>
+      <mat-icon class="fs-6 mt-1 main-color">arrow_forward_ios</mat-icon>
+    </div>
+  </div>
+</section>
+
+<!-- End of shopWithUs Section -->
+
+<ngx-http-loader [opacity]="0.9" [title]="'E-Shop.com'" subTitle="Online Shop Store" [loader]="loader.ELLIPSIS"
+  [iconColor]="'#E74646'" [backdropBackgroundColor]="'black'"> </ngx-http-loader>

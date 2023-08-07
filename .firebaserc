@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "e-shop-beb69": {
+      "hosting": {
+        "E-shop": [
+          "e-shop-beb69"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "e-shop-beb69"
+  }
+}

@@ -1,0 +1,185 @@
+@import "../../../../assets/style/_colors.scss";
+
+.sec-hero {
+  position: relative;
+  background-image: url(../../../../assets/imgs/hero.jpeg);
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 200px;
+  color: white !important;
+  letter-spacing: 1px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+}
+.add-to-cart {
+  color: $lightColor;
+  font-size: 16px;
+  background-color: $mainColor;
+  padding: 6px 15px;
+  border: 2px solid $mainColor;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+
+  &:hover {
+    color: white !important;
+    background-color: $mainColor;
+    border-color: $mainColor;
+  }
+}
+mat-icon{
+  font-size: 20px !important;
+}
+.all-products {
+  overflow: hidden !important;
+
+  mat-drawer-container {
+    background-color: unset;
+    color: unset;
+    mat-drawer {
+      width: 270px;
+      background-color: $lightColor;
+      border: 0;
+      overflow: hidden;
+
+      mat-radio-button {
+        display: block;
+      }
+
+      button {
+        color: white;
+        font-size: 16px;
+        background-color: $mainColor;
+        padding: 6px 15px;
+        border: 2px solid $mainColor;
+        transition: all 0.5s;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -ms-transition: all 0.5s;
+        -o-transition: all 0.5s;
+
+        &:hover {
+          color: white !important;
+          background-color: $mainColor;
+          border-color: $mainColor;
+        }
+      }
+    }
+  }
+
+  .discount {
+    text-decoration: line-through;
+  }
+
+  .product-container {
+    position: relative !important;
+    cursor: pointer;
+    overflow: hidden;
+
+
+    img {
+      width: 180px;
+      height: 230px;
+      transition: all 0.8s;
+      -webkit-transition: all 0.8s;
+      -moz-transition: all 0.8s;
+      -ms-transition: all 0.8s;
+      -o-transition: all 0.8s;
+    }
+
+
+
+    .product-overlay {
+      position: absolute;
+      cursor: pointer;
+      color: white;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      opacity: 0;
+      display: flex;
+      overflow: hidden;
+      transition: all 0.5s;
+      -webkit-transition: all 0.5s;
+      -moz-transition: all 0.5s;
+      -ms-transition: all 0.5s;
+      -o-transition: all 0.5s;
+
+      .show-icon,
+      .add-cart-icon {
+        transform: translateX(100px);
+        -webkit-transform: translateX(100px);
+        -moz-transform: translateX(100px);
+        -ms-transform: translateX(100px);
+        -o-transform: translateX(100px);
+        background-color: white !important;
+        color: $mainColor !important;
+
+        &:hover {
+          background-color: $mainColor !important;
+          color: white !important;
+        }
+      }
+
+      .show-icon {
+        transition: all 0.5s;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -ms-transition: all 0.5s;
+        -o-transition: all 0.5s;
+      }
+
+      .add-cart-icon {
+        transition: all 0.8s;
+        -webkit-transition: all 0.8s;
+        -moz-transition: all 0.8s;
+        -ms-transition: all 0.8s;
+        -o-transition: all 0.8s;
+      }
+    }
+
+    &:hover {
+      img {
+        transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        -o-transform: scale(1.1);
+      }
+
+      .product-overlay {
+        opacity: 1;
+
+        .show-icon,
+        .add-cart-icon {
+          transform: translateX(0px);
+          -webkit-transform: translateX(0px);
+          -moz-transform: translateX(0px);
+          -ms-transform: translateX(0px);
+          -o-transform: translateX(0px);
+        }
+      }
+    }
+
+  }
+}
+
+::ng-deep.mat-mdc-radio-button .mdc-radio .mdc-radio__native-control:enabled+.mdc-radio__background .mdc-radio__inner-circle {
+  border-color: $mainColor !important;
+}
+
+::ng-deep.mat-mdc-radio-button .mdc-radio .mdc-radio__native-control:enabled:checked+.mdc-radio__background .mdc-radio__outer-circle {
+  border-color: $mainColor !important;
+}

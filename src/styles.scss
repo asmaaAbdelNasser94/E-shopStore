@@ -1,0 +1,143 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined");
+@import "../src/assets/style/colors";
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+*:not(mat-icon) {
+  font-family: 'Oswald', sans-serif !important;
+  line-height: 1.2 !important;
+}
+
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  color: $darkColor !important;
+}
+h1 , h2 , h3 , h4 , h5 , h6 {
+  margin: 0;
+}
+.wrapper{
+  min-height: calc(100vh - 546px )
+}
+p {
+  font-size: 16px;
+  font-weight: normal;
+  margin: 0 !important;
+}
+
+a {
+  color: $darkColor;
+  text-decoration: none !important;
+  font-size: 18px;
+  cursor: pointer;
+
+  &:hover {
+    color: unset;
+  }
+}
+
+section {
+  padding: 48px 0;
+}
+
+mat-icon {
+  font-size: 40px !important;
+  height: auto !important;
+  width: auto !important;
+  overflow: visible !important;
+}
+
+// drak mode
+
+.dark-theme {
+  color: $lightColor !important;
+  background-color: $bgDark;
+
+  button,
+  a {
+    color: $lightColor !important;
+  }
+
+  .sign-in .card,
+  .sign-up .card {
+    background-color: $bgDark;
+
+    mat-icon {
+      color: $darkColor;
+    }
+  }
+
+  mat-toolbar {
+    background-color: $bgDark !important;
+    color: $lightColor;
+
+    mat-icon {
+      color: $lightColor !important;
+    }
+  }
+
+  .free-shipping,
+  .men-flat,
+  .categories ,
+  .product-details {
+    background-color: $bgDark2 !important;
+    color: $lightColor !important;
+  }
+
+  .mat-mdc-tab .mdc-tab__text-label,
+  .mat-mdc-tab-link .mdc-tab__text-label {
+    color: $lightColor;
+  }
+
+  .mat-mdc-tab-header-pagination-chevron {
+    border-color: $lightColor;
+  }
+
+  .menu button {
+    color: $darkColor !important;
+  }
+
+  mat-drawer {
+    background-color: $bgDark2 !important;
+    color: $lightColor;
+
+    .mdc-form-field {
+      color: $lightColor !important;
+    }
+  }
+
+  mat-header-cell,
+  mat-cell {
+    color: $lightColor;
+  }
+
+  .mdc-data-table__cell,
+  .mdc-data-table__header-cell{
+    border-bottom-color : $lightColor;
+  }
+    .item-warn{
+      background-color: $bgDark2 !important;
+      // color: #50d38bc6;
+    }
+  footer {
+    background-color: $darkFooter !important;
+    color: $lightColor !important;
+
+    a {
+      color: $lightColor !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  mat-icon {
+    font-size: 30px !important;
+  }
+}
