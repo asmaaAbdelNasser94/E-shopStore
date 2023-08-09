@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./men-flat.component.scss']
 })
 export class MenFlatComponent {
-
+  imgPath = "../../../../assets/imgs/hero3.jpeg";
 }
