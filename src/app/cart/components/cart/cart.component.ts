@@ -42,14 +42,12 @@ export class CartComponent implements OnInit {
           response['quantity'] = this.cartProducts[i].quantity;
           this.getProducts.push(response);
           this.priceBox.push(response.price * response.quantity);
-          // console.log(this.priceBox);
           this.final = [...this.getProducts];
           this.items = this.final.length;
           this.calcTotal()
         })
       }
     }
-    // this.calcTotal()
   }
 
   // delete all products

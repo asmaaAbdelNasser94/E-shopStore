@@ -18,31 +18,17 @@
   }
 }
 
-// .link-active{
-//   &::before{
-//     position: absolute;
-//     content: '';
-//     background-color: white;
-//     width: 70%;
-//     height: 3px;
-//     bottom: 0;
-//     left: 50%;
-//     transform: translateX(-50%);
-//     -webkit-transform: translateX(-50%);
-//     -moz-transform: translateX(-50%);
-//     -ms-transform: translateX(-50%);
-//     -o-transform: translateX(-50%);
-// }
-// }
 mat-toolbar {
   background-color: $mainColor !important;
   height: 80px;
 
-
-
   mat-icon {
     cursor: pointer;
     font-size: 35px !important;
+  }
+
+  .menu-btn {
+    display: none !important;
   }
 }
 
@@ -58,6 +44,7 @@ mat-list-item {
 }
 
 .offcanvas {
+  display: none;
   background-color: $mainColor;
   width: 280px;
 
@@ -71,6 +58,13 @@ mat-list-item {
     mat-list {
       display: none !important;
     }
+    .menu-btn {
+      display: flex !important;
+    }
+
   }
+     .offcanvas {
+       display: flex !important;
+     }
 
 }

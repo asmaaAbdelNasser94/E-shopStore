@@ -49,10 +49,7 @@ mat-icon{
     color: unset;
     mat-drawer {
       width: 270px;
-      background-color: $lightColor;
-      border: 0;
-      overflow: hidden;
-
+      border-left: 1px solid #ccc;
       mat-radio-button {
         display: block;
       }

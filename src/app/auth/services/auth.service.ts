@@ -49,6 +49,7 @@ export class AuthService {
   //Logout Method
   logout() {
     this._AngularFireAuth.signOut().then(() => {
+      this.userInfo.next(null);
       localStorage.removeItem('userData');
       localStorage.removeItem('userToken');
       this._Router.navigate(['/sign-in']);
