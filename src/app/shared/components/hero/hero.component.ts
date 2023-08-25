@@ -24,7 +24,7 @@ export class HeroComponent {
     navText: ['', ''],
     nav: true ,
     autoplay : true ,
-    autoplayTimeout : 2500 ,
+    autoplayTimeout : 3500 ,
     autoplaySpeed : 1000 ,
     responsive: {
       0: {

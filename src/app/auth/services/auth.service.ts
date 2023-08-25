@@ -8,6 +8,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class AuthService {
   userInfo = new BehaviorSubject<any>(null);
+  FireError = new BehaviorSubject<any>(null);
   constructor(private _AngularFireAuth: AngularFireAuth, private _Router: Router) {
     if (localStorage.getItem('userData') !== null) {
       this.userInfo.next(JSON.parse(localStorage.getItem('userData') || ''))
@@ -27,7 +28,9 @@ export class AuthService {
 
       this._Router.navigate(['/home']);
     }, error => {
-      alert(error.message);
+      this.FireError.next(error.code);
+      console.log(error.message);
+      console.log(error.code);
     })
   }
 

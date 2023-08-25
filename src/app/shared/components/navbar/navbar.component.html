@@ -8,9 +8,15 @@
           <mat-icon>menu</mat-icon>
         </button>
         <mat-list class="d-flex mx-auto" role="list">
-          <mat-list-item routerLinkActive="link-active" role="listitem"><a routerLink="home">Home</a></mat-list-item>
-          <mat-list-item role="listitem"><a routerLink="products">Products</a></mat-list-item>
-          <mat-list-item role="listitem"><a routerLink="contact">Contact us</a></mat-list-item>
+          <mat-list-item role="listitem">
+            <a routerLink="home" routerLinkActive="link-active">Home</a>
+          </mat-list-item>
+          <mat-list-item role="listitem">
+            <a routerLink="products" routerLinkActive="link-active">Products</a>
+          </mat-list-item>
+          <mat-list-item role="listitem">
+            <a routerLink="contact" routerLinkActive="link-active">Contact us</a>
+          </mat-list-item>
         </mat-list>
         <div class="d-flex justify-content-center align-items-center">
           <button [ngClass]="{'dark-active' : isClicked}" (click)="toggleTheme()" class="bg-transparent border-0">

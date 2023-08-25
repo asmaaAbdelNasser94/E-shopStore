@@ -1,7 +1,7 @@
 @import '../../../../assets/style/colors';
 
 * {
-  color: white !important;
+  color: white;
 }
 
 .dark-active {
@@ -17,7 +17,12 @@
     color: $bgDark !important;
   }
 }
-
+.link-active{
+  font-weight: 400 !important;
+  &:hover{
+    color: white !important;
+  }
+}
 mat-toolbar {
   background-color: $mainColor !important;
   height: 80px;
@@ -40,6 +45,9 @@ mat-list-item {
     font-size: 20px;
     font-weight: lighter;
     letter-spacing: 1px;
+    &:hover:not(.link-active){
+      color: #ffffffc8;
+   }
   }
 }
 

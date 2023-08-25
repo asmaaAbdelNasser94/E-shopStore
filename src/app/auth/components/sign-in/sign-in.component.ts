@@ -11,6 +11,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class SignInComponent {
   hide = true;
   errorMsg : string = '';
+  fireError! : string ;
   signInForm = new FormGroup({
     email : new FormControl(null, [Validators.required, Validators.email]) ,
     password : new FormControl(null, [Validators.required])
@@ -34,5 +35,4 @@ export class SignInComponent {
       this._AuthService.signIn(signInFrom.controls['email'].value ,
         signInFrom.controls['password'].value)
   }
-
 }
