@@ -19,10 +19,14 @@
           </a>
         </mat-menu>
       </div>
-      <div class="header-text text-center d-flex flex-column justify-content-center">
-        <h1 class="mb-1 fw-bold">E-Shop</h1>
-        <p class="fw-light text-muted">Online Shop Store</p>
-      </div>
+        <div class="header-text text-center d-flex justify-content-center">
+          <img class="img-fluid me-1" src="../../../../assets/imgs/Online Shop Logo.png" alt="">
+          <div class="d-flex flex-column">
+            <h1 class="mb-1 fw-bold">E-Shop</h1>
+            <p class="fw-light text-muted">Online Shop Store</p>
+          </div>
+        </div>
+
       <div class="header-right-icon d-flex align-items-center">
         <span *ngIf="isLogin" class="me-2">Hello {{userName}}</span>
         <mat-icon *ngIf="isLogin" class="material-icons-outlined person2 me-3" matRipple [matRippleCentered]="centered"

@@ -5,7 +5,7 @@
 </div>
 <div class="all-products">
   <mat-drawer-container class="example-container">
-    <mat-drawer #drawer [mode]="mode" [opened]='isOpen' class="py-3 my-3 px-2">
+    <mat-drawer #drawer [mode]="mode" [opened]='isOpen' class="py-3 mb-3 px-2">
       <div class="container">
         <h4>Filters</h4>
         <hr>
@@ -42,7 +42,7 @@
       </div>
       <ng-template #all>
         <div class="row gy-5">
-          <div *ngFor="let product of allProducts; let i=index" class="col-lg-3 col-md-4 col-sm-6 d-flex">
+          <div *ngFor="let product of allProducts; let i=index" class="col-lg-3 col-md-4 col-6 d-flex">
             <div class="w-100 p-2 d-flex flex-column justify-content-between align-items-center">
               <div class="product-container text-center">
                 <img class="img-fluid rounded-2" [src]="product.image" alt />

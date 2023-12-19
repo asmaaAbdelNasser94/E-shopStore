@@ -65,7 +65,6 @@ export class CartComponent implements OnInit {
       })
       this.discount = 8;
       this.grandTotal = this.total - 8;
-      console.log(this.total);
     }
   }
   // decrement process
@@ -92,7 +91,6 @@ export class CartComponent implements OnInit {
         } else if (e.quantity == 1) {
           const index = this.cartProducts.indexOf(e);
           this.cartProducts.splice(index, 1);
-          console.log(this.cartProducts);
           localStorage.setItem('cart', JSON.stringify(this.cartProducts));
           this.refresh()
         }
@@ -111,7 +109,6 @@ export class CartComponent implements OnInit {
         }
         else if (this.quantity < 1) {
           this.quantity = e.quantity;
-          console.log(e.quantity);
           localStorage.setItem('cart', JSON.stringify(this.cartProducts));
           this.refresh()
         }

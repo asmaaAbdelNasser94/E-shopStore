@@ -19,6 +19,8 @@ import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { FormsModule} from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +40,7 @@ import { FormsModule} from '@angular/forms';
     MaterialModule ,
     RouterModule ,
     NgxHttpLoaderModule.forRoot() ,
+    ToastrModule.forRoot() ,
     HttpClientModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),

@@ -10,7 +10,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^15.0.0",
+    "@angular/animations": "^15.2.10",
     "@angular/cdk": "^15.2.9",
     "@angular/common": "^15.0.0",
     "@angular/compiler": "^15.0.0",
@@ -25,6 +25,7 @@
     "jquery": "^3.7.0",
     "ngx-http-loader": "^15.0.0",
     "ngx-owl-carousel-o": "^15.0.1",
+    "ngx-toastr": "^15.2.2",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"

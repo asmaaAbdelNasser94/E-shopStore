@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-sign-in',
@@ -11,13 +12,13 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class SignInComponent {
   hide = true;
   errorMsg : string = '';
-  fireError! : string ;
   signInForm = new FormGroup({
     email : new FormControl(null, [Validators.required, Validators.email]) ,
     password : new FormControl(null, [Validators.required])
   })
 
-  constructor(private _AuthService: AuthService, private _Router: Router) { }
+  constructor(private _AuthService: AuthService, private _Router: Router ,
+    private _ToastrService: ToastrService) { }
 
   getEmailErrorMessage() {
     if (this.signInForm.controls['email'].hasError('required')) {
@@ -34,5 +35,6 @@ export class SignInComponent {
   signIn(signInFrom : FormGroup){
       this._AuthService.signIn(signInFrom.controls['email'].value ,
         signInFrom.controls['password'].value)
+
   }
 }

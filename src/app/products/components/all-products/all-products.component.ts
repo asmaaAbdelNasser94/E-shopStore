@@ -4,6 +4,7 @@ import { ProductDetailsComponent } from '../product-details/product-details.comp
 import { MatDialog } from '@angular/material/dialog';
 import { NgxLoader } from 'ngx-http-loader';
 import { Router } from '@angular/router';
+import { Database } from '@angular/fire/database';
 declare var $ :any;
 
 @Component({

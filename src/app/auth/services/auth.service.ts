@@ -29,8 +29,6 @@ export class AuthService {
       this._Router.navigate(['/home']);
     }, error => {
       this.FireError.next(error.code);
-      console.log(error.message);
-      console.log(error.code);
     })
   }
 

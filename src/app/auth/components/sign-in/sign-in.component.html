@@ -4,7 +4,6 @@
       <div class="card rounded-0 h-100 p-5">
         <h2 class="mx-auto mb-4">Welcome Back!</h2>
         <form class="px-lg-5" [formGroup]="signInForm" (ngSubmit)="signIn(signInForm)">
-          <p>hello {{fireError}}</p>
           <div *ngIf="errorMsg" class="alert alert-danger" role="alert">
             {{errorMsg}}
           </div>
